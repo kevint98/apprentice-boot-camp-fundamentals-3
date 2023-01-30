@@ -4,8 +4,9 @@ namespace McrDigital\PhpFundamentals3\Tax;
 
 use DateTime;
 use PHPUnit\Framework\TestCase;
+use tax\DefaultTaxCalculator;
 
-require_once "DummyTaxCalculator.php";
+require_once "DefaultTaxCalculator.php";
 
 class TaxCalculatorPetrolTest extends TestCase
 {
@@ -15,7 +16,7 @@ class TaxCalculatorPetrolTest extends TestCase
     protected function setUp(): void
     {
         self::$FIRST_OF_JAN_2019 = new DateTime("2019-01-01");
-        $this->taxCalculator = new DummyTaxCalculator();
+        $this->taxCalculator = new DefaultTaxCalculator();
     }
 
     public function testFirstYearsTaxForPetrol_0_grams_co2()
