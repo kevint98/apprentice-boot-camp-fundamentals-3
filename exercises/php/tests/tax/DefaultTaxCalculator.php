@@ -1,10 +1,6 @@
 <?php
 
-namespace tax;
-
-use McrDigital\PhpFundamentals3\Tax\FuelType;
-use McrDigital\PhpFundamentals3\Tax\TaxCalculator;
-use McrDigital\PhpFundamentals3\Tax\Vehicle;
+namespace McrDigital\PhpFundamentals3\Tax;
 
 class DefaultTaxCalculator extends TaxCalculator
 {

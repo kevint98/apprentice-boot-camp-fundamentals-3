@@ -4,7 +4,6 @@ namespace McrDigital\PhpFundamentals3\Tax;
 
 use DateTime;
 use PHPUnit\Framework\TestCase;
-use tax\DefaultTaxCalculator;
 
 require_once "DefaultTaxCalculator.php";
 
