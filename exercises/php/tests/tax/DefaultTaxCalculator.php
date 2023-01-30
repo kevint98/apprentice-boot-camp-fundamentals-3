@@ -6,10 +6,12 @@ class DefaultTaxCalculator extends TaxCalculator
 {
     public function calculateTax(Vehicle $vehicle) : int
     {
-
+        $emissions = $vehicle->getCo2Emissions();
         if ($vehicle->getFuelType() == FuelType::PETROL)
         {
-            switch ($emissions = $vehicle->getCo2Emissions())
+
+
+            switch ($emissions)
             {
                 case 0:
                     return 0;
@@ -39,5 +41,41 @@ class DefaultTaxCalculator extends TaxCalculator
                     return 2070;
             }
         }
+
+        if ($vehicle->getFuelType() == FuelType::ALTERNATIVE_FUEL)
+        {
+            $emissions = $vehicle->getCo2Emissions();
+            echo 'test';
+            echo $emissions;
+
+            switch ($emissions)
+            {
+                case ($emissions <= 50):
+                    return 0;
+                case ($emissions <= 75) :
+                    return 15;
+                case ($emissions <= 90) :
+                    return 95;
+                case ($emissions <= 100) :
+                    return 115;
+                case ($emissions <= 110) :
+                    return 135;
+                case ($emissions <= 130) :
+                    return 155;
+                case ($emissions <= 150) :
+                    return 195;
+                case ($emissions <= 170) :
+                    return 505;
+                case ($emissions <= 190) :
+                    return 820;
+                case ($emissions <= 225) :
+                    return 1230;
+                case ($emissions <= 255) :
+                    return 1750;
+                case ($emissions > 255) :
+                    return 2060;
+            }
+        }
+        return 0;
     }
 }
