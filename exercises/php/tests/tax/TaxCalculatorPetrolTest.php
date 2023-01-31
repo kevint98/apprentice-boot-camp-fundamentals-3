@@ -15,7 +15,7 @@ class TaxCalculatorPetrolTest extends TestCase
     protected function setUp(): void
     {
         self::$FIRST_OF_JAN_2019 = new DateTime("2019-01-01");
-        $this->taxCalculator = new DefaultTaxCalculator();
+        $this->taxCalculator = new DefaultTaxCalculator(false, false);
     }
 
     public function testFirstYearsTaxForPetrol_0_grams_co2()

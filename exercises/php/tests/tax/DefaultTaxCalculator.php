@@ -4,6 +4,7 @@ namespace McrDigital\PhpFundamentals3\Tax;
 
 class DefaultTaxCalculator extends TaxCalculator
 {
+
     public function calculateTax(Vehicle $vehicle) : int
     {
         $emissions = $vehicle->getCo2Emissions();

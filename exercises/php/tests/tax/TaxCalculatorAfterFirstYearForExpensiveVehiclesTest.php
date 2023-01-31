@@ -5,7 +5,7 @@ namespace McrDigital\PhpFundamentals3\Tax;
 use DateTime;
 use PHPUnit\Framework\TestCase;
 
-require_once "DummyTaxCalculator.php";
+require_once "DefaultTaxCalculator.php";
 
 //class TaxCalculatorAfterFirstYearForExpensiveVehiclesTest extends TestCase
 //{
@@ -15,7 +15,7 @@ require_once "DummyTaxCalculator.php";
 //    protected function setUp(): void
 //    {
 //        self::$FIRST_OF_APRIL_2017 = new DateTime("2017-04-01");
-//        $this->taxCalculator = new DummyTaxCalculator();
+//        $this->taxCalculator = new DefaultTaxCalculator(false, false);
 //    }
 //
 //    public function testSubsequentYearsTaxForPetrolIfOver40K(): void
