@@ -8,6 +8,20 @@ class DefaultTaxCalculator extends TaxCalculator
     public function calculateTax(Vehicle $vehicle) : int
     {
         $emissions = $vehicle->getCo2Emissions();
+        if($this->isStory4()){
+            $isFirstYearsTax = ($this->getYear() - $vehicle->getDateOfFirstRegistration()->format('Y')) < 1;
+            if(!$isFirstYearsTax && $vehicle->getListPrice() < 40000){
+                switch ($vehicle->getFuelType()) {
+                    case FuelType::ELECTRIC:
+                        return 0;
+                    case FuelType::ALTERNATIVE_FUEL :
+                        return 130;
+                    default :
+                        return 140;
+                }
+            }
+        }
+
         if ($vehicle->getFuelType() == FuelType::PETROL) {
             return $this->petrolTaxFirstYear($vehicle);
         } else if ($vehicle->getFuelType() == FuelType::ALTERNATIVE_FUEL) {
