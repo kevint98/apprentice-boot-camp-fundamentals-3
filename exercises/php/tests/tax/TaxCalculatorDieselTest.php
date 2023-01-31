@@ -15,7 +15,7 @@ class TaxCalculatorDieselTest extends TestCase
     protected function setUp(): void
     {
         self::$FIRST_OF_JAN_2019 = new DateTime("2019-01-01");
-        $this->taxCalculator = new DefaultTaxCalculator(false, false);
+        $this->taxCalculator = new DefaultTaxCalculator(false, false, self::$FIRST_OF_JAN_2019->format('Y'));
     }
 
     public function testFirstYearsTaxForDiesel_0_grams_co2()

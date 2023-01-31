@@ -25,9 +25,15 @@ abstract class TaxCalculator
     }
 
 
-
     public function getYear()
     {
         return $this->year;
+    }
+
+    public function isStory4() : bool {
+        return $this->isStory4;
+    }
+    public function isStory5() : bool {
+        return $this->isStory5;
     }
 }
