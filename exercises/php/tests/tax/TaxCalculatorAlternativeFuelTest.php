@@ -18,12 +18,12 @@ class TaxCalculatorAlternativeFuelTest extends TestCase
         $this->taxCalculator = new DefaultTaxCalculator(false, false, self::$FIRST_OF_JAN_2019->format('Y'));
     }
 
-//    public function testFirstYearsTaxForAlternativeFuel_0_grams_co2()
-//    {
-//        $vehicle = new Vehicle(0, FuelType::ALTERNATIVE_FUEL, self::$FIRST_OF_JAN_2019, 20000);
-//
-//        $this->assertEquals(0, $this->taxCalculator->calculateTax($vehicle));
-//    }
+    public function testFirstYearsTaxForAlternativeFuel_0_grams_co2()
+    {
+        $vehicle = new Vehicle(0, FuelType::ALTERNATIVE_FUEL, self::$FIRST_OF_JAN_2019, 20000);
+
+        $this->assertEquals(0, $this->taxCalculator->calculateTax($vehicle));
+    }
 
     public function testFirstYearsTaxForAlternativeFuel_1_to_50_grams_co2()
     {
