@@ -24,16 +24,24 @@ abstract class TaxCalculator
         $this->isStory5 = $isStory5;
     }
 
-
-    public function getYear()
+    public function getYear(): int
     {
         return $this->year;
     }
 
-    public function isStory4() : bool {
+    /**
+     * @return bool
+     */
+    public function isStory4(): bool
+    {
         return $this->isStory4;
     }
-    public function isStory5() : bool {
+
+    /**
+     * @return bool
+     */
+    public function isStory5(): bool
+    {
         return $this->isStory5;
     }
 }
